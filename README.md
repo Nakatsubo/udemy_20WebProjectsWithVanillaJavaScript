@@ -4,7 +4,16 @@ Build 20 mini frontend projects from scratch with HTML5, CSS & JavaScript (No fr
 ## Index
 1. Form Validator | Intro Project
 
+## Good VSCode Expanded Functionality
+1. Emmet
+1. Auto Rename Tag
+1. Bracket Pair Colorizer
+1. JavaScript (ES6) code snippets
+1. Live Server
+1. Prettier - Code formatter
+
 ## Project Base Setting by webpack
+webpackを使用する必然性はないがシステムに慣れるために導入する
 
 #### package.json
 
