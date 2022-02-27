@@ -26,21 +26,37 @@ const isValidEmail = (email) => {
   return re.test(String(email).toLowerCase());
 }  
 
+// Check required fields
+const checkRequired = (inputArr) => {
+  inputArr.forEach((input) => {
+    console.log(input.id)
+    if (input.value.trim() === '') showError(input, `${getFildName(input)} is required`);
+    else showSuccess(input);
+  });
+}
+
+// Get fieldname
+const getFildName = (input) => {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
 // Event Listeners
 form.addEventListener('submit', (e) => {
   // event.preventDefaultメソッドは、submitイベントの発生元であるフォームが持つデフォルトの動作をキャンセルするメソッドです。
   e.preventDefault();
 
-  if (username.value === '') showError(username, 'Username is required');
-  else showSuccess(username);
+  // if (username.value === '') showError(username, 'Username is required');
+  // else showSuccess(username);
 
-  if (email.value === '') showError(email, 'Email is required');
-  else if (!isValidEmail(email.value)) showError(email, 'Email is not valid');
-  else showSuccess(email);
+  // if (email.value === '') showError(email, 'Email is required');
+  // else if (!isValidEmail(email.value)) showError(email, 'Email is not valid');
+  // else showSuccess(email);
 
-  if (password.value === '') showError(password, 'Password is required');
-  else showSuccess(password);
+  // if (password.value === '') showError(password, 'Password is required');
+  // else showSuccess(password);
 
-  if (password2.value === '') showError(password2, 'Password2 is required');
-  else showSuccess(password2);
+  // if (password2.value === '') showError(password2, 'Password2 is required');
+  // else showSuccess(password2);
+
+  checkRequired([username,email, password, password2]);
 });
