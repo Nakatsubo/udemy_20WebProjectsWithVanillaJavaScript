@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #232333;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-container {
+  margin: 20px 0;
+  select {
+    padding: 5px 15px;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: #fff;
+    font-size: 14px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+.seat {
+  width: 15px;
+  height: 12px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #444451;
+  &.selected {
+    background-color: #6feaf6;
+  }
+  &.occupied {
+    background-color: #fff;
+  }
+  &:nth-of-type(2) {
+    margin-right: 18px;
+  }
+  &:nth-last-of-type(2) {
+    margin-left: 18px;
+  }
+  &:not(.occupied):hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
+
+.showcase {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: rgba(0, 0 , 0, 0.1);
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .seat {
+    &:not(.occupied):hover {
+      transform: scale(1);
+      cursor: default;
+    }
+  }
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    small {
+      margin-left: 2px;
+    }
+  }
+}
+
+.container {
+  perspective: 1000px; // 3Dに奥行きを指定する
+  margin-bottom: 30px;
+  .screen {
+    height: 70px;
+    margin: 15px auto;
+    background-color: #fff;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.text {
+  margin: 5px 0;
+  span {
+    color: #6feaf6;
+  }
+}
