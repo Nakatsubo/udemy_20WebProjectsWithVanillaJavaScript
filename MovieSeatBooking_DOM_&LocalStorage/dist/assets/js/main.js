@@ -1,2 +1,2 @@
-!function(){"use strict";console.log("Hello, World")}();
+!function(){"use strict";var e=document.querySelector(".container"),t=(document.querySelectorAll(".row .seat:not(.occupied)"),document.getElementById("count")),n=document.getElementById("total"),c=document.getElementById("movie"),o=+c.value,a=function(){var e=document.querySelectorAll(".row .seat.selected").length;t.innerText=e,n.innerText=e*o};c.addEventListener("change",(function(e){o=+e.target.value,a()})),e.addEventListener("click",(function(e){e.target.classList.contains("seat")&&!e.target.classList.contains("occupied")&&(e.target.classList.toggle("selected"),a())}))}();
 //# sourceMappingURL=main.js.map
