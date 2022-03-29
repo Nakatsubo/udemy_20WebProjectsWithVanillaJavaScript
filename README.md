@@ -13,6 +13,9 @@ Build 20 mini frontend projects from scratch with HTML5, CSS & JavaScript (No fr
 1. Live Server
 1. Prettier - Code formatter
 
+## Good CSS Materials
+- [Styling Cross-Browser Compatible Range Inputs with CSS](https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/)
+
 ## Project Base Setting by webpack
 webpackを使用する必然性はないがシステムに慣れるために導入する
 
