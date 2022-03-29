@@ -107,7 +107,11 @@ module.exports = {
     assetModuleFilename: "assets/img/[name][ext][query]",
     filename: "assets/js/[name].js",
     clean: {
-      keep: /index.html/,
+      keep: [
+        /index.html/,
+        /img/,
+        /videos/
+      ]
     } 
   },
 
