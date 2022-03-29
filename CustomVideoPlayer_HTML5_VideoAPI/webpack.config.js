@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // 追加
 
 module.exports = {
   devtool: "source-map",
@@ -19,6 +20,9 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "assets/css/style.css",
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ["**/*", "!**.html", "!assets/**"], //削除対象外を指定
     }),
   ],
 
@@ -106,13 +110,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/img/[name][ext][query]",
     filename: "assets/js/[name].js",
-    clean: {
-      keep: [
-        /index.html/,
-        /img/,
-        /videos/
-      ]
-    } 
+    // clean: {
+    //   keep: /index.html/, 
+    // } 
   },
 
   optimization: {

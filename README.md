@@ -19,6 +19,26 @@ Build 20 mini frontend projects from scratch with HTML5, CSS & JavaScript (No fr
 ## Project Base Setting by webpack
 webpackを使用する必然性はないがシステムに慣れるために導入する
 
+### Pending
+assets以下のディレクトリがビルド時にクリーンナップされてしまうため、以下設定の変更をした。
+
+#### webpack.config.js
+
+```javascript
+// ...
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
+
+// ...
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "assets/css/style.css",
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ["**/*", "!**.html", "!assets/**"], //削除対象外を指定
+    }),
+  ],
+```
+
 #### package.json
 
 ```javascript
