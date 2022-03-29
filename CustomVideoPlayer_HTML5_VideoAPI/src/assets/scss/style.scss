@@ -1,1 +1,70 @@
-@import './modules/_progress.scss'
+@import './modules/_progress.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Questrial', sans-serif;
+  max-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #666;
+}
+
+h1 {
+  color: #fff;
+}
+
+.screen {
+  width: 60%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #000 !important;
+  cursor: pointer;
+}
+
+.controls {
+  width: 60%;
+  padding: 10px;
+  background-color: #333;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+  }
+  .fa-play {
+    color: #28a745;
+  }
+  .fa-stop {
+    color: #dc3545;
+  }
+  .fa-pause {
+    color: #fff;
+  }
+  .timestamp {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #fff;
+  }
+}
+
+@media (max-width: 800px) {
+  .screen, .controls {
+    width: 90%;
+  }
+}
