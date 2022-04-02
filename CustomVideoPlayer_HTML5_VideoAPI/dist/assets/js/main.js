@@ -1,2 +1,2 @@
-!function(){"use strict";console.log("Hello, Tohma")}();
+!function(){"use strict";var e=document.getElementById("video"),t=document.getElementById("play"),n=document.getElementById("stop"),a=document.getElementById("progress"),d=(document.getElementById("timestamp"),function(){e.paused?e.play():e.pause()}),i=function(){e.paused?t.innerHTML='<i class="fa fa-play fa-2x"></i>':t.innerHTML='<i class="fa fa-pause fa-2x"></i>'};e.addEventListener("click",d),e.addEventListener("pause",i),e.addEventListener("play",i),e.addEventListener("timeupdate",(function(){return!0})),t.addEventListener("click",d),n.addEventListener("click",(function(){e.currentTime=0,e.pause()})),a.addEventListener("change",(function(){return!0}))}();
 //# sourceMappingURL=main.js.map
