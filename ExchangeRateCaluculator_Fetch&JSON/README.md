@@ -1,2 +1,2 @@
-# Form Validator Intro Project
+# Exchange Rate Caluculator | Fetch & JSON
 
