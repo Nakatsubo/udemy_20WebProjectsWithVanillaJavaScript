@@ -110,9 +110,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/img/[name][ext][query]",
     filename: "assets/js/[name].js",
-    clean: {
-      keep: /index.html/,
-    } 
+    // clean: {
+    //   keep: /index.html/,
+    // } 
   },
 
   optimization: {
