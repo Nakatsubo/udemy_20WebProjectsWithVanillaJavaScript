@@ -11,7 +11,20 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ "./src/assets/scss/style.scss");
 
-console.log('Hello, World');
+
+function caclulate() {
+  // fetch('./assets/data/items.json', {
+  //   method: 'POST',
+  //   headers: {'Content-Type': 'applictation/json'}
+  // })
+  fetch('./assets/data/items.json').then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    return document.body.innerHTML = data[0].text;
+  });
+}
+
+caclulate();
 
 /***/ }),
 
@@ -162,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "6c260e0b0bb9b074943d"; }
+/******/ 		__webpack_require__.h = function() { return "0cfb7b07cd9fb46b27dd"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
