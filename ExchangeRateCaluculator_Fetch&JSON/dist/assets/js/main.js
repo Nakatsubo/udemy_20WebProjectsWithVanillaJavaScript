@@ -10,20 +10,52 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ "./src/assets/scss/style.scss");
+ // function caclulate() {
+//   // fetch('./assets/data/items.json', {
+//   //   method: 'POST',
+//   //   headers: {'Content-Type': 'applictation/json'}
+//   // })
+//   fetch('./assets/data/items.json')
+//     .then(res => res.json())
+//     .then(data => document.body.innerHTML = data[0].text);
+// }
+// caclulate();
 
+var currencyEl_one = document.getElementById('currency-one');
+var amountEl_one = document.getElementById('amount-one');
+var currencyEl_two = document.getElementById('currency-two');
+var amountEl_two = document.getElementById('amount-two');
+var rateEl = document.getElementById('rate');
+var swap = document.getElementById('swap'); // Fetch exchange rates and update the DOM 
 
 function caclulate() {
-  // fetch('./assets/data/items.json', {
-  //   method: 'POST',
-  //   headers: {'Content-Type': 'applictation/json'}
-  // })
-  fetch('./assets/data/items.json').then(function (res) {
+  // console.log('RAN');
+  var currency_one = currencyEl_one.value;
+  var currency_two = currencyEl_two.value; // console.log(currency_one, currency_two);
+
+  fetch("https://api.exchangerate-api.com/v4/latest/".concat(currency_one)).then(function (res) {
     return res.json();
   }).then(function (data) {
-    return document.body.innerHTML = data[0].text;
-  });
-}
+    // console.log(data);
+    var rate = data.rates[currency_two]; // console.log(rate);
 
+    rateEl.innerText = "1 ".concat(currency_one, " = ").concat(rate, " ").concat(currency_two);
+    amountEl_two.value = (amountEl_one.value * rate).toFixed(2); // toFixed() メソッドは、数を固定小数点表記を用いて整形する
+  });
+} // Event Listeners
+
+
+currencyEl_one.addEventListener('change', caclulate);
+amountEl_one.addEventListener('input', caclulate);
+currencyEl_two.addEventListener('change', caclulate);
+amountEl_two.addEventListener('input', caclulate); // 切り替え処理
+
+swap.addEventListener('click', function () {
+  var temp = currencyEl_one.value;
+  currencyEl_one.value = currencyEl_two.value;
+  currencyEl_two.value = temp;
+  caclulate();
+});
 caclulate();
 
 /***/ }),
@@ -175,7 +207,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "0cfb7b07cd9fb46b27dd"; }
+/******/ 		__webpack_require__.h = function() { return "ea9c67769f2a7657a54e"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
