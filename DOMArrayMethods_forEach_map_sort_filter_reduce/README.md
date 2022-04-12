@@ -1,2 +1,2 @@
-# Form Validator Intro Project
+# DOM Array Methods
 
