@@ -87,7 +87,8 @@ module.exports = {
               presets: [
                 "@babel/preset-env",
               ],
-              plugins: ['@babel/plugin-transform-runtime'],
+              // Webpack + Babel で async/await 使ったら「regeneratorRuntime is not defined」エラー
+              plugins: ['@babel/plugin-transform-runtime'], //追加
             },
           },
         ],
