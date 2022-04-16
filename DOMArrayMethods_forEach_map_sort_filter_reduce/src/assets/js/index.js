@@ -52,6 +52,13 @@ function soryByrichest() {
   upDateDom();
 }
 
+// Filter only millioneres
+function showMillionaires() {
+  data = data.filter(user => user.money > 1000000);
+
+  upDateDom();
+}
+
 // Update Dom
 function upDateDom(providedData = data) {
   // Clear main div
@@ -73,6 +80,7 @@ function formatMoney(number) {
 }
 
 // Event Listeners
-// addUserBtn.addEventListener('click', getRandomUser());
-dubleBtn.addEventListener('click', doubleMoney());
-sortBtn.addEventListener('click', soryByrichest());
+addUserBtn.addEventListener('click', getRandomUser);
+dubleBtn.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', soryByrichest);
+showMillionairesBtn.addEventListener('click', showMillionaires);
