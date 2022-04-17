@@ -1,2 +1,2 @@
-# Form Validator Intro Project
+# Movie Seat Booking | DOM & Local Storage
 
