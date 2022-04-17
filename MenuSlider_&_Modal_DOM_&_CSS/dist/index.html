@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="user">
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <button id="toggle" class="toggle">
+        <i class="fa fa-bars fa-2x"></i>
+      </button>
+      <h1>My Landing Page</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, qui!</p>
+      <button class="cta-btn" id="open">Sign Up</button>
+    </header>
+
+    <div class="container">
+      <h2>What is this landing page about?</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos iure, culpa quaerat quia molestiae eveniet minus! Voluptatum culpa dolore maiores deleniti error, tempora eius dolores excepturi ab modi soluta vel.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus suscipit numquam modi dicta, iure impedit fugit cumque laborum recusandae aliquam!
+      </p>
+
+      <h2>Tell Me More</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, non doloremque ad, ullam repellat ea cumque animi placeat, earum illum maxime excepturi praesentium accusantium libero corporis suscipit laborum? Quae, ea tempore! Modi nobis illum non soluta cupiditate quis ullam perspiciatis?
+      </p>
+
+      <h2>Benefit</h2>
+      <ul>
+        <li>Lifetime Access</li>
+        <li>30 Day Money Back</li>
+        <li>Tailored Customer Support</li>
+      </ul>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla corrupti ipsa mollitia deleniti, ex ab, aut atque corporis magni molestiae dolor dignissimos accusamus iusto assumenda quis a illo id ea quos? Magnam quaerat obcaecati rem facilis sit nostrum aut! Iste animi provident esse dolorum eaque, laborum qui alias impedit ipsa vero pariatur veritatis enim cupiditate ex facere dicta totam, consequuntur quidem magnam dolore cum quibusdam fugit. Amet delectus non perferendis.
+      </p>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <button class="close-btn" id="close">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="modal-header">
+          <h3>Sign Up</h3>
+        </div>
+        <div class="modal-content">
+          <p>Register with use to get offers, support and more</p>
+          <form class="modal-form">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Enter Name">
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Enter Email" class="form-input">
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Enter Password"
+              class="form-input">
+            </div>
+            <div>
+              <label for="password2">Confirm Password</label>
+              <input type="password2" id="password2" placeholder="Confirm Password"
+              class="form-input">
+            </div>
+            <input type="submit" value="Submit" class="submit-btn"
+            class="form-input">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/vendor.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

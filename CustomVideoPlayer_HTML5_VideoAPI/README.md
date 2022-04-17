@@ -1,2 +1,1 @@
-# Form Validator Intro Project
-
+# Custom Video Player | HTML5 Video API
