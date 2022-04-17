@@ -13,6 +13,12 @@
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
+  transition: transform 0.3s ease;
+
+  &.show-nav {
+    // Width of nav
+    transform: translate(200px);
+  }
 }
 
 nav {
@@ -121,6 +127,10 @@ header {
   right: 0;
   bottom: 0;
 
+  &.show-modal {
+    display: block;
+  }
+
   .modal {
     width: 400px;
     background-color: #fff;
@@ -131,6 +141,8 @@ header {
     left: 50%;
     overflow: hidden;
     transform: translate(-50%, -50%);
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
 
     .modal-header {
       padding: 15px;
@@ -170,5 +182,16 @@ header {
       top: 0;
       right: 0;
     }
+  }
+
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

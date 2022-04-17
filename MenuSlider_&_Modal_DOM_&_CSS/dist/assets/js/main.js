@@ -1,2 +1,2 @@
-!function(){"use strict";console.log("Hello, World")}();
+!function(){"use strict";var e=document.getElementById("toggle"),t=document.getElementById("close"),n=document.getElementById("open"),o=document.getElementById("modal");e.addEventListener("click",(function(){document.body.classList.toggle("show-nav")})),n.addEventListener("click",(function(){o.classList.add("show-modal")})),t.addEventListener("click",(function(){o.classList.remove("show-modal")})),window.addEventListener("click",(function(e){e.target===o&&o.classList.remove("show-modal")}))}();
 //# sourceMappingURL=main.js.map
