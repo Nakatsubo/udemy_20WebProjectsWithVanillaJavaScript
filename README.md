@@ -8,7 +8,7 @@ Build 20 mini frontend projects from scratch with HTML5, CSS & JavaScript (No fr
 1. Exchange Rate Caluculator | Fetch & JSON
 1. DOM Array Methods | forEach, map, filter, sort, reduce
 1. Menu Slider & Modal | DOM & CSS
-
+1. Hangman Game | DOM, SVG, Events
 
 ## Good VSCode Expanded Functionality
 1. Emmet
