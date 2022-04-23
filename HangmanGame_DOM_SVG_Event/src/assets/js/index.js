@@ -40,7 +40,30 @@ function displayWord() {
 
 // Update the wrong letters
 function updateWrongLettersEL() {
-  console.log('Update wrong');
+  // console.log('Update wrong');
+
+  // Display wrong letters
+  wrongLettersEl.innerHTML = `
+    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+    ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+  `;
+
+  // Display parts
+  figureParts.forEach((part, index) => {
+    const errors = wrongLetters.length;
+
+    if (index < errors) {
+      part.style.display = 'block';
+    } else {
+      part.style.display = 'none'; 
+    }
+  })
+
+  // Check it lost
+  if (wrongLetters.length === figureParts.length) {
+    finalMessage.innerText = 'Unfortunately you lost. 😕';
+    popup.style.display = 'flex';
+  }
 }
 
 // Show notification
@@ -77,5 +100,21 @@ window.addEventListener('keydown', e => {
     }
   }
 });
+
+// Restart game and play again
+playAgainBtn.addEventListener('click', () => {
+  // Empty arrays
+  // splice(0) -> 配列の要素を全削除する (インデックス0以降のすべての要素を削除)
+  correctLetters.splice(0);
+  wrongLetters.splice(0);
+
+  selectedWord = words[Math.floor(Math.random() * words.length)];
+
+  displayWord();
+
+  updateWrongLettersEL();
+
+  popup.style.display = 'none';
+})
 
 displayWord();
