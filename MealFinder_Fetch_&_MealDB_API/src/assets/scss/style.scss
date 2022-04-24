@@ -91,10 +91,74 @@ body {
   }
 }
 
-@media(max-width: 800px) {}
-@media(max-width: 700px) {}
+.single-meal {
+  width: 70%;
+  margin: 30px auto;
+
+  img {
+    width: 300px;
+    border: 4px #fff solid;
+    border-radius: 2px;
+    margin: 15px;
+  }
+
+  .single-meal-info {
+    padding: 10px;
+    border: 2px #e09850 dashed;
+    border-radius: 5px;
+    margin: 20px;
+
+    p {
+      margin: 0;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      padding: 5px;
+      border: 1px solid #ededed;
+      border-radius: 5px;
+      margin: 0 5px 5px 0;
+      background-color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      color: #2d2013;
+    }
+  }
+}
+
+@media(max-width: 800px) {
+  .meals {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media(max-width: 700px) {
+  .meals {
+    grid-template-columns: repeat(2, 1fr);
+
+    .meal {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
 @media(max-width: 500px) {
   input[type='text'] {
     width: 100%;
+  }
+
+  .meals {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .meal {
+    width: 300px;
+    height: 300px;
   }
 }
