@@ -50,6 +50,47 @@ body {
   }
 }
 
+.meals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-top: 20px;
+
+  .meal {
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border: 4px #fff solid;
+      border-radius: 2px;
+    }
+
+    .meal-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.2s ease-in;
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 @media(max-width: 800px) {}
 @media(max-width: 700px) {}
 @media(max-width: 500px) {
