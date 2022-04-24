@@ -25,7 +25,7 @@ function searchMeal(e) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
         resultHeading.innerHTML = `<h2>Search results for '${term}':</h2>`;
 
         if (data.meals === null) {
@@ -49,5 +49,69 @@ function searchMeal(e) {
   }
 }
 
+// Fetch meal by ID
+function getMealById(mealID) {
+  fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
+  .then(res => res.json())
+  .then(date => {
+    // console.log(date);
+    const meal = date.meals[0];
+
+    addMealDOM(meal);
+  })
+}
+
+// Add meal to DOM
+function addMealDOM(meal) {
+  const ingredients = [];
+
+  for (let i = 1; i <= 20; i += 1) {
+    if (meal[`strIngredient${i}`]) {
+      ingredients.push(
+        `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+      );
+    } else {
+      break;
+    }
+  }
+
+  single_mealEL.innerHTML = `
+    <div class="single-meal">
+      <h1>${meal.strMeal}</h1>
+      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+      <div class="single-meal-info">
+        ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
+        ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
+      </div>
+      <div class="main">
+        <p>${meal.strInstructions}</p>
+        <h2>Ingredients<h2>
+        <ul>
+          ${ingredients.map(ing => `<li>${ing}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+  `;
+}
+
 // Event Listeners
 submit.addEventListener('submit', searchMeal);
+
+mealsEL.addEventListener('click', e => {
+  const mealInfo = e.path.find(item  => {
+    // console.log(item);
+    if (item.classList) {
+      return item.classList.contains('meal-info');
+    } else {
+      return false;
+    }
+  })
+
+  // console.log(mealInfo);
+  if (mealInfo) {
+    const mealId = mealInfo.getAttribute('data-mealId');
+    // console.log(mealId);
+
+    getMealById(mealId);
+  }
+});
