@@ -64,8 +64,10 @@ function addTransactionDOM(transaction) {
 
   // Add Class Based on Value
   item.classList.add(transaction.amount < 0 ? 'minus' : 'plus');
+  
   item.innerHTML = `
-    ${transaction.text} <span>${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn" id="delete-btn" onclick="removeTransaction(${transaction.id})">x</button>
+    ${transaction.text} <span>${sign}${Math.abs(transaction.amount
+    )}</span> <button class="delete-btn" onclick="removeTransaction(${transaction.id})">x</button>
   `;
 
   list.appendChild(item);
