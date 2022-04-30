@@ -1,6 +1,6 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const path                   = require("path");
+const MiniCssExtractPlugin   = require("mini-css-extract-plugin");
+const CssMinimizerPlugin     = require("css-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -110,9 +110,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/img/[name][ext][query]",
     filename: "assets/js/[name].js",
-    clean: {
-      keep: /index.html/,
-    } 
+    // clean: {
+    //   keep: /index.html/,
+    // } 
   },
 
   optimization: {
