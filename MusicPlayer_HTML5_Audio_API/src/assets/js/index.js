@@ -44,6 +44,55 @@ function pauseSong() {
   audio.pause();
 }
 
+// Previous song
+function prevSong() {
+  songIndex --;
+
+  // 最後の曲に戻す
+  if (songIndex < 0) songIndex = songs.length - 1;
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
+// Next song
+function nextSong() {
+  songIndex ++;
+
+  // 最初の曲に戻す
+  if (songIndex > songs.length - 1) songIndex = 0;
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
+// Update progress bar
+function updateProgress(e) {
+  const { duration, currentTime } = e.srcElement;
+  // console.log(duration, currentTime);
+
+  const progressPercent = (currentTime / duration) * 100;
+  // console.log(progressPercent);
+
+  progress.style.width = `${progressPercent}%`;
+}
+
+// Set Progress bar
+function setProgress(e) {
+  // console.log(this); -> progressContainer
+  // Element.clientWidth プロパティは、インライン要素や CSS のない要素ではゼロになります。それ以外では、要素の内側の寸法をピクセル単位で表します。パディングは含みますが、境界、マージン、（もしあれば）垂直スクロールバーは含みません。
+  const width    = this.clientWidth;
+  // 位置を取得
+  const clickX   = e.offsetX;
+  const duration = audio.duration;
+
+  // console.log(clickX);
+
+  audio.currentTime = (clickX / width) * duration;
+}
+
 // Event Listeners
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
@@ -51,3 +100,16 @@ playBtn.addEventListener('click', () => {
   if (isPlaying) pauseSong();
   else playSong();
 });
+
+// Change song
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
+
+// Time/song update
+audio.addEventListener('timeupdate', updateProgress);
+
+// Click on progess bar
+progressContainer.addEventListener('click', setProgress);
+
+// Song ends
+audio.addEventListener('ended', nextSong);
