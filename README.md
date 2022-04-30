@@ -11,6 +11,8 @@ Build 20 mini frontend projects from scratch with HTML5, CSS & JavaScript (No fr
 1. Hangman Game | DOM, SVG, Events
 1. Meal Finder | Fetch & MealDB API
 1. Expence Tracker | Array Methods & Local Storage
+1. Music Player | HTML5 Audio API
+1. Infinite Scroll Posts | Fetch, Async/Await, PostCSS Loader
 
 ## Good VSCode Expanded Functionality
 1. Emmet
@@ -19,6 +21,9 @@ Build 20 mini frontend projects from scratch with HTML5, CSS & JavaScript (No fr
 1. JavaScript (ES6) code snippets
 1. Live Server
 1. Prettier - Code formatter
+
+## Good JavaScript Materials
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 ## Good CSS Materials
 - [Styling Cross-Browser Compatible Range Inputs with CSS](https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/)
