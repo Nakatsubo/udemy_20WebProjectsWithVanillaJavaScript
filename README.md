@@ -10,6 +10,7 @@ Build 20 mini frontend projects from scratch with HTML5, CSS & JavaScript (No fr
 1. Menu Slider & Modal | DOM & CSS
 1. Hangman Game | DOM, SVG, Events
 1. Meal Finder | Fetch & MealDB API
+1. Expence Tracker | Array Methods & Local Storage
 
 ## Good VSCode Expanded Functionality
 1. Emmet
