@@ -13,6 +13,7 @@ Build 20 mini frontend projects from scratch with HTML5, CSS & JavaScript (No fr
 1. Expence Tracker | Array Methods & Local Storage
 1. Music Player | HTML5 Audio API
 1. Infinite Scroll Posts | Fetch, Async/Await, PostCSS Loader
+1. Typing Game | DOM, Intervals, Events
 
 ## Good VSCode Expanded Functionality
 1. Emmet
